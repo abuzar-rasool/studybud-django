@@ -8,7 +8,7 @@
 
 This is my first django project which was created along with following the tutorial.
 
-[Python Django 7 Hour Course - Traversy Media](https://www.youtube.com/watch?v=PtQiiknWUcI&t=17134s)  
+[Python Django 7 Hour Course - Traversy Media](https://www.youtube.com/watch?v=PtQiiknWUcI)  
 
 The course was pretty comprehensive in terms of content and follwoing are my key learnings from this project.
 
@@ -21,6 +21,7 @@ The course was pretty comprehensive in terms of content and follwoing are my key
 - [x] Implementing Custom User Model
 - [x] Deploying django projects on [Heroku](https://heroku.com/)
 - [x] Connecting external media buckets (AWS S3 and Cloudinary)
+- [x] Integrating PostgreSQL 
 
 ### App Preview
 
