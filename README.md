@@ -1,5 +1,7 @@
 
 # StudyBuddy - Django
+[![Heroku](https://heroku-badge.herokuapp.com/?app=heroku-badge)]
+
 This is my first django project which was created along with following the tutorial.
 
 [Python Django 7 Hour Course - Traversy Media](https://www.youtube.com/watch?v=PtQiiknWUcI&t=17134s)  
