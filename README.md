@@ -1,9 +1,10 @@
 
 # StudyBuddy - Django
-![Heroku](https://heroku-badge.herokuapp.com/?app=heroku-badge)
-![Cloudinary](https://heroku-badge.herokuapp.com/?app=heroku-badge)
+[![Heroku - Deployed](https://img.shields.io/badge/Heroku-Deployed-2ea44f)](https://django-study-bud.herokuapp.com/)
+[![Cloudinary - Deployed](https://img.shields.io/badge/Heroku-Deployed-2ea44f)](https://django-study-bud.herokuapp.com/)
 
-[Live Preview]{https://django-study-bud.herokuapp.com/}
+
+[![Live Preview](https://img.shields.io/badge/Live_Preview-2ea44f?style=for-the-badge)](https://django-study-bud.herokuapp.com/)
 
 This is my first django project which was created along with following the tutorial.
 
