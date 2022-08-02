@@ -66,17 +66,35 @@ python manage.py runserver
 &nbsp; 
 <br>
 <p align="center">
-  Feed Home
+  Home
 </p>
 <img src="screenshots/home.png">
 </td> 
 <td width="50%">
 <br>
 <p align="center">
-  Room Conversation Preview
+  Room Conversitions
 </p>
-<img src="https://user-images.githubusercontent.com/72341453/134747155-3ca5b55f-b064-4741-aeae-abe90bddf41e.PNG">  
+<img src="screenshots/room.png">
 </td>
+ </tr>
+ <tr>
+<td width="50%">      
+&nbsp; 
+<br>
+<p align="center">
+  Home
+</p>
+<img src="screenshots/home.png">
+</td> 
+<td width="50%">
+<br>
+<p align="center">
+  Room Conversitions
+</p>
+<img src="screenshots/room.png">
+</td>
+ </tr>
 </table>
 
 
