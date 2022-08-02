@@ -1,7 +1,7 @@
 
 # StudyBuddy - Django
 [![Heroku - Deployed](https://img.shields.io/badge/Heroku-Deployed-2ea44f)](https://django-study-bud.herokuapp.com/)
-[![Cloudinary - Deployed](https://img.shields.io/badge/Heroku-Deployed-2ea44f)](https://django-study-bud.herokuapp.com/)
+[![Cloudinary - Deployed](https://img.shields.io/badge/Cloudinary-Deployed-2ea44f)](https://django-study-bud.herokuapp.com/)
 
 
 [![Live Preview](https://img.shields.io/badge/Live_Preview-2ea44f?style=for-the-badge)](https://django-study-bud.herokuapp.com/)
