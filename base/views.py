@@ -1,10 +1,11 @@
 from multiprocessing import context
 from pydoc_data.topics import topics
-from django.http import HttpResponse
+from venv import create
+from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect
 from django.db.models import Q
 from .models import Message, Room, Topic
-from .forms import RoomForm
+from .forms import RoomForm, UserForm
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
@@ -48,11 +49,17 @@ def room (request,pk):
 def createRoom(request):
     form = RoomForm()
     if request.method == 'POST':
-        form = RoomForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('home')
-    context = {'form' : form}
+        topic_name = request.POST.get('topic')
+        topic,created = Topic.objects.get_or_create(name=topic_name)
+        Room.objects.create(
+            host=request.user,
+            topic=topic,
+            name=request.POST.get('name'),
+            description=request.POST.get('description')
+        )
+        return redirect('home')
+    topics = Topic.objects.all()
+    context = {'form' : form, 'topics' : topics}
     return render(request, 'base/room_form.html', context)
 
 
@@ -62,11 +69,15 @@ def updateRoom(request,pk):
         return HttpResponse('You are not allowed here!!')
     form = RoomForm(instance=room)
     if request.method == 'POST':
-        form = RoomForm(request.POST, instance=room)
-        if form.is_valid():
-            form.save()
-            return redirect('home')
-    context = {'form' : form}
+        topic_name = request.POST.get('topic')
+        topic,created = Topic.objects.get_or_create(name=topic_name)
+        room.name = request.POST.get('name')
+        room.description = request.POST.get('description')
+        room.topic = topic
+        room.save()
+        return redirect('home')
+    topics = Topic.objects.all()
+    context = {'form' : form, 'topics' : topics, 'room' : room}
     return render(request, 'base/room_form.html', context)
 
 
@@ -105,6 +116,7 @@ def loginPage(request):
 
 def logoutUser(request):
     logout(request)
+    ##go back
     return redirect('home')
 
 def register(request):
@@ -146,3 +158,28 @@ def userProfile(request, pk):
     topics = Topic.objects.all()
     context = {'user' : user, 'rooms' : rooms, 'room_messages' : room_messages, 'topics' : topics}
     return render(request, 'base/profile.html', context)
+
+
+@login_required(login_url='login')
+def editProfile(request):
+    form = UserForm(instance=request.user)
+    if request.method == 'POST':
+        form = UserForm(request.POST, instance=request.user)
+        if form.is_valid():
+            form.save()
+            return redirect('profile', pk=request.user.id)
+        else:
+            messages.error(request, 'Something went wrong!')
+    return render(request, 'base/edit-profile.html',{'form' : form})
+
+
+
+def topicsPage(request):
+    q = request.GET.get('q') if request.GET.get('q') != None else ''
+    topics = Topic.objects.filter(name__icontains=q)
+    return render(request, 'base/topics.html', {'topics': topics})
+
+
+def activityPage(request):
+    room_messages = Message.objects.all()
+    return render(request, 'base/activity.html', {'room_messages': room_messages})
