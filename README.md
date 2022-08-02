@@ -125,7 +125,7 @@ The course was pretty comprehensive in terms of content and follwoing are my key
 
 
 
-### Cloning the repository
+## Cloning the repository
 
 --> Clone the repository using the command below :
 ```bash
@@ -163,7 +163,7 @@ pip install -r requirements.txt
 
 #
 
-### Running the App
+## Running the App
 
 --> To run the App, we use :
 ```bash
