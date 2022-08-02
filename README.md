@@ -58,7 +58,7 @@ python manage.py runserver
 
 #
 
-### App Preview :
+### App Preview
 
 <table width="100%"> 
 <tr>
