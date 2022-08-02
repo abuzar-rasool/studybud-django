@@ -19,7 +19,7 @@ The course was pretty comprehensive in terms of content and follwoing are my key
 - [x] CRUD
 - [x] Search
 - [x] Implementing Custom User Model
-- [x] Deploying django projects on [Heroku]{https://heroku.com/}
+- [x] Deploying django projects on [Heroku](https://heroku.com/)
 - [x] Connecting external media buckets (AWS S3 and Cloudinary)
 
 ### App Preview
