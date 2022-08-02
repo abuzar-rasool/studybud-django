@@ -1,6 +1,7 @@
 asgiref==3.5.2
 autopep8==1.6.0
 distlib==0.3.5
+dj-database-url==1.0.0
 Django==4.0.6
 djangorestframework==3.13.1
 filelock==3.7.1
