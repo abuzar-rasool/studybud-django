@@ -68,7 +68,7 @@ python manage.py runserver
 <p align="center">
   Feed Home
 </p>
-<img src="screenshots/home.PNG">
+<img src="screenshots/home.png">
 </td> 
 <td width="50%">
 <br>
