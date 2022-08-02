@@ -78,23 +78,64 @@ python manage.py runserver
 <img src="screenshots/room.png">
 </td>
  </tr>
+  
+  
  <tr>
 <td width="50%">      
 &nbsp; 
 <br>
 <p align="center">
-  Home
+  Create/Update Room
 </p>
-<img src="screenshots/home.png">
+<img src="screenshots/create-update-room.png">
 </td> 
 <td width="50%">
 <br>
 <p align="center">
-  Room Conversitions
+  Search
 </p>
-<img src="screenshots/room.png">
+<img src="screenshots/search.png">
 </td>
  </tr>
+  
+  <tr>
+<td width="50%">      
+&nbsp; 
+<br>
+<p align="center">
+  Login
+</p>
+<img src="screenshots/login.png">
+</td> 
+<td width="50%">
+<br>
+<p align="center">
+  Signup
+</p>
+<img src="screenshots/signup.png">
+</td>
+ </tr>
+  
+  
+  <tr>
+<td width="50%">      
+&nbsp; 
+<br>
+<p align="center">
+  Profile
+</p>
+<img src="screenshots/profile.png">
+</td> 
+<td width="50%">
+<br>
+<p align="center">
+  Edit Profile
+</p>
+<img src="screenshots/edit-profile.png">
+</td>
+ </tr>
+  
+  
 </table>
 
 
