@@ -13,14 +13,14 @@ This is my first django project which was created along with following the tutor
 The course was pretty comprehensive in terms of content and follwoing are my key learnings from this project.
 
 - [x] Django REST Framework
-- [x] Deploying django projects on heroku
-- [x] Connecting external media buckets
 - [x] Django Templates
 - [x] Functional Views & URL's
 - [x] Django Database Models
 - [x] CRUD
 - [x] Search
 - [x] Implementing Custom User Model
+- [x] Deploying django projects on [Heroku]{https://heroku.com/}
+- [x] Connecting external media buckets (AWS S3 and Cloudinary)
 
 ### App Preview
 
@@ -101,6 +101,29 @@ The course was pretty comprehensive in terms of content and follwoing are my key
   
   
 </table>
+
+
+## API Reference
+
+[![Access API](https://img.shields.io/badge/Access_API-2ea44f?style=for-the-badge)](https://django-study-bud.herokuapp.com/api/)
+
+#### Get all rooms
+
+```http
+  GET /api/rooms
+```
+
+#### Get single room
+
+```http
+  GET /api/rooms/${id}
+```
+
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `id`      | `string` | **Required**. Id of room to fetch |
+
+
 
 ### Cloning the repository
 
