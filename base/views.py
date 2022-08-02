@@ -4,13 +4,11 @@ from venv import create
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect
 from django.db.models import Q
-from .models import Message, Room, Topic
-from .forms import RoomForm, UserForm
-from django.contrib.auth.models import User
+from .models import Message, Room, Topic, User
+from .forms import CustomUserCreationForm, RoomForm, UserForm
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.forms import UserCreationForm
 
 
 def home(request):
@@ -51,12 +49,13 @@ def createRoom(request):
     if request.method == 'POST':
         topic_name = request.POST.get('topic')
         topic,created = Topic.objects.get_or_create(name=topic_name)
-        Room.objects.create(
+        room = Room.objects.create(
             host=request.user,
             topic=topic,
             name=request.POST.get('name'),
             description=request.POST.get('description')
         )
+        room.participants.add(request.user)
         return redirect('home')
     topics = Topic.objects.all()
     context = {'form' : form, 'topics' : topics}
@@ -121,9 +120,9 @@ def logoutUser(request):
 
 def register(request):
     page = 'register'
-    form = UserCreationForm()
+    form = CustomUserCreationForm()
     if request.method == 'POST':
-        form = UserCreationForm(request.POST)
+        form = CustomUserCreationForm(request.POST)
         if form.is_valid():
             user=form.save(commit=False)
             user.username = user.username.lower()
@@ -148,7 +147,6 @@ def deleteMessage(request, pk):
     return render(request, 'base/delete.html', context)
 
 
-@login_required(login_url='login')
 def userProfile(request, pk):
     user = User.objects.get(id=pk)
     if user is None:
@@ -164,7 +162,7 @@ def userProfile(request, pk):
 def editProfile(request):
     form = UserForm(instance=request.user)
     if request.method == 'POST':
-        form = UserForm(request.POST, instance=request.user)
+        form = UserForm(request.POST, request.FILES, instance=request.user)
         if form.is_valid():
             form.save()
             return redirect('profile', pk=request.user.id)
