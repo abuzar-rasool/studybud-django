@@ -1,6 +1,7 @@
 
 # StudyBuddy - Django
-[![Heroku](https://heroku-badge.herokuapp.com/?app=heroku-badge)]
+![Heroku](https://heroku-badge.herokuapp.com/?app=heroku-badge)
+### [Live Preview]{https://django-study-bud.herokuapp.com/}
 
 This is my first django project which was created along with following the tutorial.
 
