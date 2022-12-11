@@ -47,11 +47,7 @@ class RoomViewSet(viewsets.ModelViewSet):
         serializer.save(host=self.request.user)
 
     def get_queryset(self):
-        user = self.request.user
-        if user.is_anonymous:
-            return Room.objects.all()
-        else:
-            return Room.objects.filter(participants=user)
+        return Room.objects.all()
 
     def perform_update(self, serializer):
         serializer.save(host=self.request.user)
