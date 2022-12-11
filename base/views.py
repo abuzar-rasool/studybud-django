@@ -123,6 +123,9 @@ def register(request):
     form = CustomUserCreationForm()
     if request.method == 'POST':
         form = CustomUserCreationForm(request.POST)
+        #print values from form
+        print(form.errors)
+
         if form.is_valid():
             user=form.save(commit=False)
             user.username = user.username.lower()
@@ -130,7 +133,10 @@ def register(request):
             login(request, user)
             return redirect('home')
         else:
-            messages.error(request, 'Something went wrong!')
+            # get value from the first key in dict and display it
+            a = list(form.error_messages.values())[-1]
+
+            messages.error(request, 'Something went wrong! {}'.format(a))
     context = {'page' : page, 'form' : form}
     return render(request, 'base/login_register.html', context)
 
